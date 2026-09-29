@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Diagnosis Report — Crop Doctor</title>
+  
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,600;0,700;0,800;1,600&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/dashboard.css">
+  <link rel="stylesheet" href="css/responsive.css">
+</head>
+<body>
+
+  <header class="site-header">
+    <div class="container nav-container">
+      <a href="index.html" class="brand-link">
+        <img src="assets/icons/logo.svg" alt="Crop Doctor Logo" class="brand-logo-icon">
+        <div class="brand-text-wrap">
+          <span class="brand-name">CROP DOCTOR</span>
+          <span class="brand-subtext">AI FIELD INTELLIGENCE</span>
+        </div>
+      </a>
+
+      <nav class="nav-links" aria-label="App Navigation">
+        <a href="dashboard.html" class="nav-link">Dashboard</a>
+        <a href="diagnosis.html" class="nav-link">Diagnose</a>
+        <a href="history.html" class="nav-link">History</a>
+        <a href="profile.html" class="nav-link">Profile</a>
+        <a href="about.html" class="nav-link">About</a>
+      </nav>
+
+      <div class="nav-actions"></div>
+
+      <button class="mobile-toggle" aria-label="Open mobile menu" aria-expanded="false">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round">
+          <line x1="3" y1="12" x2="21" y2="12"></line>
+          <line x1="3" y1="6" x2="21" y2="6"></line>
+          <line x1="3" y1="18" x2="21" y2="18"></line>
+        </svg>
+      </button>
+    </div>
+  </header>
+
+  <aside class="mobile-nav-drawer" aria-label="Mobile Navigation">
+    <div class="mobile-nav-links">
+      <a href="dashboard.html">Dashboard</a>
+      <a href="diagnosis.html">Diagnose</a>
+      <a href="history.html">History</a>
+      <a href="profile.html">Profile</a>
+      <a href="about.html">About</a>
+      <a href="contact.html">Contact</a>
+    </div>
+    <div class="mobile-nav-actions"></div>
+  </aside>
+
+  <main class="app-main">
+    <div class="container">
+      
+      <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 24px;">
+        <a href="diagnosis.html" class="auth-link" style="display: inline-flex; align-items: center; gap: 6px;">
+          ← Back to Diagnosis
+        </a>
+        <div style="display: flex; gap: 10px;">
+          <button type="button" class="btn btn-secondary btn-sm" id="printReportBtn">
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <polyline points="6 9 6 2 18 2 18 9"></polyline>
+              <path d="M6 18H4a2 2 0 0 1-2-2v-5a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v5a2 2 0 0 1-2 2h-2"></path>
+              <rect x="6" y="14" width="12" height="8"></rect>
+            </svg>
+            Print
+          </button>
+          <button type="button" class="btn btn-primary btn-sm" id="saveReportBtn">
+            Save Report
+          </button>
+        </div>
+      </div>
+
+      <div class="demo-notice-banner" style="margin-bottom: 28px;">
+        <span style="font-size: 1.5rem; color: var(--yellow);">✦</span>
+        <div>
+          <strong style="color: var(--yellow); text-transform: uppercase; font-size: 0.78rem; letter-spacing: 0.1em; display: block;">DEMO ANALYSIS</strong>
+          <p>
+            This result is generated using demonstration data. Connect your trained AI model for real predictions. AI assistance is informational and should not replace professional agricultural diagnosis.
+          </p>
+        </div>
+      </div>
+
+      <div class="result-layout">
+        
+        <aside class="result-image-panel">
+          <div class="result-image-view">
+            <img id="resultLeafImage" src="assets/images/sample-tomato-blight.svg" alt="Analyzed Leaf Sample">
+            <div class="result-overlay-tag">FIELD SCAN VERIFIED</div>
+          </div>
+
+          <h4 style="font-size: 1rem; color: var(--forest); margin-bottom: 12px; text-transform: uppercase; letter-spacing: 0.06em;">
+            6. Analysis Information
+          </h4>
+          <div class="result-meta-grid">
+            <div class="meta-item">
+              <span class="meta-label">Target Crop</span>
+              <span class="meta-value" id="resultMetaCrop">Tomato</span>
+            </div>
+            <div class="meta-item">
+              <span class="meta-label">Date Recorded</span>
+              <span class="meta-value" id="resultMetaDate">Today</span>
+            </div>
+            <div class="meta-item">
+              <span class="meta-label">Analysis ID</span>
+              <span class="meta-value" id="resultMetaId" style="font-family: monospace; font-size: 0.85rem;">CD-2026-X</span>
+            </div>
+            <div class="meta-item">
+              <span class="meta-label">Severity Level</span>
+              <span class="meta-value" id="resultMetaSeverity">Moderate</span>
+            </div>
+          </div>
+
+          <div class="result-action-buttons">
+            <a href="diagnosis.html" class="btn btn-primary btn-full">
+              New Diagnosis
+            </a>
+            <a href="history.html" class="btn btn-secondary btn-full">
+              View History
+            </a>
+          </div>
+        </aside>
+
+        <div class="result-content-panel">
+          
+          <div class="result-status-card" id="resultStatusCard">
+            <div class="result-header-row">
+              <div>
+                <span class="badge-status review" id="resultStatusBadge" style="margin-bottom: 8px; display: inline-block;">
+                  Possible Disease Detected
+                </span>
+                <h1 class="result-condition-name" id="resultConditionName">Tomato Early Blight</h1>
+                <div class="result-scientific-name" id="resultScientificName">Alternaria solani</div>
+              </div>
+
+              <div class="result-score-badge">
+                <div class="score-number" id="resultConfidenceScore">87%</div>
+                <div class="score-caption">Confidence</div>
+              </div>
+            </div>
+
+            <div class="result-section-block">
+              <h3>
+                <span style="color: var(--green);">✦</span> 1. What We Found
+              </h3>
+              <p id="resultWhatWeFound" style="font-size: 1.05rem; line-height: 1.65; color: var(--text-light);">
+                Early blight is a prevalent fungal disease that targets solanaceous crops. It typically begins on older lower foliage and progresses upward, forming distinctive concentric target-ring spots.
+              </p>
+            </div>
+
+            <div class="result-section-block">
+              <h3>
+                <span style="color: var(--green);">✦</span> 2. Common Symptoms
+              </h3>
+              <ul class="result-bullet-list" id="resultSymptomsList"></ul>
+            </div>
+
+            <div class="result-section-block">
+              <h3>
+                <span style="color: var(--green);">✦</span> 3. Recommended Next Steps
+              </h3>
+              <ol class="result-step-list" id="resultNextStepsList"></ol>
+            </div>
+
+            <div class="result-section-block">
+              <h3>
+                <span style="color: var(--green);">✦</span> 4. Prevention & Long-Term Care
+              </h3>
+              <ul class="result-bullet-list" id="resultPreventionList"></ul>
+            </div>
+
+            <div class="result-section-block" style="border-bottom: none;">
+              <div class="expert-advisory-card">
+                <h4>
+                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <circle cx="12" cy="12" r="10"></circle>
+                    <line x1="12" y1="8" x2="12" y2="12"></line>
+                    <line x1="12" y1="16" x2="12.01" y2="16"></line>
+                  </svg>
+                  5. When to Seek Expert Help
+                </h4>
+                <p id="resultExpertAdvice" style="font-size: 0.95rem; color: #5F4207; line-height: 1.55;">
+                  If lesions spread to over 30% of the canopy or stem lesions appear near ground level, consult your local agricultural extension service for commercial management protocols.
+                </p>
+              </div>
+            </div>
+
+          </div>
+
+        </div>
+
+      </div>
+
+    </div>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-bottom" style="padding-top: 0; border: none;">
+      <div>© 2026 Crop Doctor • Student Community Project</div>
+      <div>AI assistance is informational and should not replace professional agricultural diagnosis.</div>
+    </div>
+  </footer>
+
+  <script src="js/auth.js"></script>
+  <script src="js/main.js"></script>
+  <script src="js/result.js"></script>
+</body>
+</html>

@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Diagnosis History — Crop Doctor</title>
+  
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,600;0,700;0,800;1,600&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/dashboard.css">
+  <link rel="stylesheet" href="css/responsive.css">
+</head>
+<body>
+
+  <header class="site-header">
+    <div class="container nav-container">
+      <a href="index.html" class="brand-link">
+        <img src="assets/icons/logo.svg" alt="Crop Doctor Logo" class="brand-logo-icon">
+        <div class="brand-text-wrap">
+          <span class="brand-name">CROP DOCTOR</span>
+          <span class="brand-subtext">AI FIELD INTELLIGENCE</span>
+        </div>
+      </a>
+
+      <nav class="nav-links" aria-label="App Navigation">
+        <a href="dashboard.html" class="nav-link">Dashboard</a>
+        <a href="diagnosis.html" class="nav-link">Diagnose</a>
+        <a href="history.html" class="nav-link active">History</a>
+        <a href="profile.html" class="nav-link">Profile</a>
+        <a href="about.html" class="nav-link">About</a>
+      </nav>
+
+      <div class="nav-actions"></div>
+
+      <button class="mobile-toggle" aria-label="Open mobile menu" aria-expanded="false">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round">
+          <line x1="3" y1="12" x2="21" y2="12"></line>
+          <line x1="3" y1="6" x2="21" y2="6"></line>
+          <line x1="3" y1="18" x2="21" y2="18"></line>
+        </svg>
+      </button>
+    </div>
+  </header>
+
+  <aside class="mobile-nav-drawer" aria-label="Mobile Navigation">
+    <div class="mobile-nav-links">
+      <a href="dashboard.html">Dashboard</a>
+      <a href="diagnosis.html">Diagnose</a>
+      <a href="history.html" class="active">History</a>
+      <a href="profile.html">Profile</a>
+      <a href="about.html">About</a>
+      <a href="contact.html">Contact</a>
+    </div>
+    <div class="mobile-nav-actions"></div>
+  </aside>
+
+  <main class="app-main">
+    <div class="container">
+      
+      <div class="page-intro">
+        <h1>Your field history.</h1>
+        <p>Review past crop evaluations, monitored conditions, and seasonal trends saved on this device.</p>
+      </div>
+
+      <div class="history-controls">
+        <div class="filter-pills" role="tablist" aria-label="History Filters">
+          <button type="button" class="filter-pill active" data-filter="all">All Diagnoses</button>
+          <button type="button" class="filter-pill" data-filter="healthy">Healthy Crops</button>
+          <button type="button" class="filter-pill" data-filter="disease">Possible Disease</button>
+        </div>
+
+        <div class="search-box-wrap">
+          <svg class="search-box-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <circle cx="11" cy="11" r="8"></circle>
+            <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+          </svg>
+          <input type="text" id="historySearchInput" class="search-box-input" placeholder="Search by crop or disease...">
+        </div>
+      </div>
+
+      <div class="history-table-card" id="historyTableContainer">
+        <table class="history-table">
+          <thead>
+            <tr>
+              <th>Crop Specimen</th>
+              <th>Date</th>
+              <th>Condition Detected</th>
+              <th>Confidence</th>
+              <th>Status</th>
+              <th style="text-align: right;">Action</th>
+            </tr>
+          </thead>
+          <tbody id="historyTableBody"></tbody>
+        </table>
+      </div>
+
+      <div class="card empty-history-state" id="emptyHistoryState" style="display: none;">
+        <div class="empty-history-icon">
+          <svg width="34" height="34" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round">
+            <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
+            <polyline points="14 2 14 8 20 8"></polyline>
+            <line x1="16" y1="13" x2="8" y2="13"></line>
+            <line x1="16" y1="17" x2="8" y2="17"></line>
+          </svg>
+        </div>
+        <h3>No diagnoses yet.</h3>
+        <p>No matching crop records found. Take a leaf photograph to generate your first diagnostic scan.</p>
+        <a href="diagnosis.html" class="btn btn-primary btn-lg">
+          Start Your First Diagnosis
+        </a>
+      </div>
+
+    </div>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-bottom" style="padding-top: 0; border: none;">
+      <div>© 2026 Crop Doctor • Student Community Project</div>
+      <div>Local device storage enabled</div>
+    </div>
+  </footer>
+
+  <script src="js/auth.js"></script>
+  <script src="js/main.js"></script>
+  <script src="js/history.js"></script>
+</body>
+</html>

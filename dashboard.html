@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Dashboard — Crop Doctor</title>
+  
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,600;0,700;0,800;1,600&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/dashboard.css">
+  <link rel="stylesheet" href="css/responsive.css">
+</head>
+<body>
+
+  <header class="site-header">
+    <div class="container nav-container">
+      <a href="index.html" class="brand-link">
+        <img src="assets/icons/logo.svg" alt="Crop Doctor Logo" class="brand-logo-icon">
+        <div class="brand-text-wrap">
+          <span class="brand-name">CROP DOCTOR</span>
+          <span class="brand-subtext">AI FIELD INTELLIGENCE</span>
+        </div>
+      </a>
+
+      <nav class="nav-links" aria-label="App Navigation">
+        <a href="dashboard.html" class="nav-link active">Dashboard</a>
+        <a href="diagnosis.html" class="nav-link">Diagnose</a>
+        <a href="history.html" class="nav-link">History</a>
+        <a href="profile.html" class="nav-link">Profile</a>
+        <a href="about.html" class="nav-link">About</a>
+      </nav>
+
+      <div class="nav-actions"></div>
+
+      <button class="mobile-toggle" aria-label="Open mobile menu" aria-expanded="false">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round">
+          <line x1="3" y1="12" x2="21" y2="12"></line>
+          <line x1="3" y1="6" x2="21" y2="6"></line>
+          <line x1="3" y1="18" x2="21" y2="18"></line>
+        </svg>
+      </button>
+    </div>
+  </header>
+
+  <aside class="mobile-nav-drawer" aria-label="Mobile Navigation">
+    <div class="mobile-nav-links">
+      <a href="dashboard.html" class="active">Dashboard</a>
+      <a href="diagnosis.html">Diagnose</a>
+      <a href="history.html">History</a>
+      <a href="profile.html">Profile</a>
+      <a href="about.html">About</a>
+      <a href="contact.html">Contact</a>
+    </div>
+    <div class="mobile-nav-actions"></div>
+  </aside>
+
+  <main class="app-main">
+    <div class="container">
+      
+      <div class="dashboard-hero-card">
+        <div class="dashboard-hero-content">
+          <div class="badge badge-yellow" style="margin-bottom: 12px; display: inline-flex;">
+            <span style="color: var(--forest);">●</span> FIELD STATION ACTIVE
+          </div>
+          <h2>
+            <span id="dashGreetingTime">Good morning,</span> <span id="dashWelcomeName">Farmer</span>.
+          </h2>
+          <p>
+            Ready to check your crops? Upload fresh foliage photographs from your plot for instant visual disease assessment and tailored care recommendations.
+          </p>
+          <a href="diagnosis.html" class="btn btn-accent btn-lg">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
+              <polyline points="17 8 12 3 7 8"></polyline>
+              <line x1="12" y1="3" x2="12" y2="15"></line>
+            </svg>
+            Upload Crop Image
+          </a>
+        </div>
+      </div>
+
+      <div class="stats-grid">
+        <div class="stat-card">
+          <div class="stat-icon forest">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M22 12h-4l-3 9L9 3l-3 9H2"/>
+            </svg>
+          </div>
+          <div class="stat-content">
+            <span class="stat-value" id="statTotalScans">0</span>
+            <span class="stat-label">Total Scans</span>
+          </div>
+        </div>
+
+        <div class="stat-card">
+          <div class="stat-icon green">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/>
+              <polyline points="22 4 12 14.01 9 11.01"/>
+            </svg>
+          </div>
+          <div class="stat-content">
+            <span class="stat-value" id="statHealthyCrops">0</span>
+            <span class="stat-label">Healthy Crops</span>
+          </div>
+        </div>
+
+        <div class="stat-card">
+          <div class="stat-icon yellow">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"/>
+              <line x1="12" y1="9" x2="12" y2="13"/>
+              <line x1="12" y1="17" x2="12.01" y2="17"/>
+            </svg>
+          </div>
+          <div class="stat-content">
+            <span class="stat-value" id="statDiseaseCrops">0</span>
+            <span class="stat-label">Possible Diseases</span>
+          </div>
+        </div>
+
+        <div class="stat-card">
+          <div class="stat-icon olive">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M19 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11l5 5v11a2 2 0 0 1-2 2z"/>
+              <polyline points="17 21 17 13 7 13 7 21"/>
+              <polyline points="7 3 7 8 15 8"/>
+            </svg>
+          </div>
+          <div class="stat-content">
+            <span class="stat-value" id="statSavedReports">0</span>
+            <span class="stat-label">Saved Reports</span>
+          </div>
+        </div>
+      </div>
+
+      <section>
+        <div class="section-title-row">
+          <div>
+            <h3>Recent Diagnoses</h3>
+            <p class="text-muted" style="font-size: 0.95rem;">Latest foliage scans analyzed in your account.</p>
+          </div>
+          <a href="history.html" class="btn btn-secondary btn-sm">
+            View All History →
+          </a>
+        </div>
+
+        <div class="diagnosis-cards-grid" id="recentDiagnosesGrid"></div>
+      </section>
+
+      <div class="disclaimer-box" style="margin-top: 48px;">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <circle cx="12" cy="12" r="10"></circle>
+          <line x1="12" y1="8" x2="12" y2="12"></line>
+          <line x1="12" y1="16" x2="12.01" y2="16"></line>
+        </svg>
+        <div>
+          <strong style="color: var(--forest); display: block; margin-bottom: 2px;">Field Intelligence Tip:</strong>
+          <span>Ensure natural daylight when capturing leaf photos. Avoid harsh midday shadows and blurriness to maintain high feature recognition fidelity.</span>
+        </div>
+      </div>
+
+    </div>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-bottom" style="padding-top: 0; border: none;">
+      <div>© 2026 Crop Doctor • Student Community Project</div>
+      <div>AI Field Intelligence • Demonstrator Edition</div>
+    </div>
+  </footer>
+
+  <script src="js/auth.js"></script>
+  <script src="js/main.js"></script>
+  <script src="js/dashboard.js"></script>
+</body>
+</html>

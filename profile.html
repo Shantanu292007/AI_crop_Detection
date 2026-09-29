@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>User Profile — Crop Doctor</title>
+  
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,600;0,700;0,800;1,600&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/dashboard.css">
+  <link rel="stylesheet" href="css/responsive.css">
+</head>
+<body>
+
+  <header class="site-header">
+    <div class="container nav-container">
+      <a href="index.html" class="brand-link">
+        <img src="assets/icons/logo.svg" alt="Crop Doctor Logo" class="brand-logo-icon">
+        <div class="brand-text-wrap">
+          <span class="brand-name">CROP DOCTOR</span>
+          <span class="brand-subtext">AI FIELD INTELLIGENCE</span>
+        </div>
+      </a>
+
+      <nav class="nav-links" aria-label="App Navigation">
+        <a href="dashboard.html" class="nav-link">Dashboard</a>
+        <a href="diagnosis.html" class="nav-link">Diagnose</a>
+        <a href="history.html" class="nav-link">History</a>
+        <a href="profile.html" class="nav-link active">Profile</a>
+        <a href="about.html" class="nav-link">About</a>
+      </nav>
+
+      <div class="nav-actions"></div>
+
+      <button class="mobile-toggle" aria-label="Open mobile menu" aria-expanded="false">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round">
+          <line x1="3" y1="12" x2="21" y2="12"></line>
+          <line x1="3" y1="6" x2="21" y2="6"></line>
+          <line x1="3" y1="18" x2="21" y2="18"></line>
+        </svg>
+      </button>
+    </div>
+  </header>
+
+  <aside class="mobile-nav-drawer" aria-label="Mobile Navigation">
+    <div class="mobile-nav-links">
+      <a href="dashboard.html">Dashboard</a>
+      <a href="diagnosis.html">Diagnose</a>
+      <a href="history.html">History</a>
+      <a href="profile.html" class="active">Profile</a>
+      <a href="about.html">About</a>
+      <a href="contact.html">Contact</a>
+    </div>
+    <div class="mobile-nav-actions"></div>
+  </aside>
+
+  <main class="app-main">
+    <div class="container">
+      
+      <div class="page-intro">
+        <h1>Farmer Profile & Settings</h1>
+        <p>Manage your account credentials, regional farm location, and primary crop focus.</p>
+      </div>
+
+      <div class="profile-layout">
+        
+        <aside class="profile-summary-card">
+          <div class="profile-avatar-large" id="profileAvatar">MR</div>
+          <h2 class="profile-user-name" id="profileName">Maria Ramos</h2>
+          <div class="profile-user-email" id="profileEmail">farmer.maria@fieldcrop.demo</div>
+
+          <div class="profile-meta-list">
+            <div class="profile-meta-row">
+              <span>Account Created:</span>
+              <span id="profileJoinedDate">Jan 2026</span>
+            </div>
+            <div class="profile-meta-row">
+              <span>Total Diagnoses:</span>
+              <span id="profileTotalScans" style="color: var(--green); font-size: 1.1rem;">3</span>
+            </div>
+            <div class="profile-meta-row">
+              <span>Access Level:</span>
+              <span class="badge badge-forest" style="padding: 2px 10px; font-size: 0.72rem;">Field Demo</span>
+            </div>
+          </div>
+
+          <div style="margin-top: 28px;">
+            <button type="button" class="btn btn-secondary btn-full btn-sm" onclick="CropDoctorAuth.logoutUser()">
+              Log Out of Account
+            </button>
+          </div>
+        </aside>
+
+        <div class="profile-form-card">
+          <h3>Edit Profile Information</h3>
+
+          <form id="profileForm" class="auth-form">
+            <div class="form-group">
+              <label for="profNameInput" class="form-label">Full Name</label>
+              <input type="text" id="profNameInput" class="form-input" required>
+            </div>
+
+            <div class="form-group">
+              <label for="profEmailInput" class="form-label">Email Address</label>
+              <input type="email" id="profEmailInput" class="form-input" required>
+            </div>
+
+            <div class="form-row">
+              <div class="form-group">
+                <label for="profLocationInput" class="form-label">Location / Farm Plot</label>
+                <input type="text" id="profLocationInput" class="form-input" placeholder="e.g. Salinas Valley, CA">
+              </div>
+
+              <div class="form-group">
+                <label for="profCropInput" class="form-label">Preferred Crop(s)</label>
+                <input type="text" id="profCropInput" class="form-input" placeholder="e.g. Tomato, Corn">
+              </div>
+            </div>
+
+            <div style="margin-top: 12px;">
+              <button type="submit" class="btn btn-primary btn-lg" id="saveProfileBtn">
+                Save Changes
+              </button>
+            </div>
+          </form>
+        </div>
+
+      </div>
+
+    </div>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-bottom" style="padding-top: 0; border: none;">
+      <div>© 2026 Crop Doctor • Student Community Project</div>
+      <div>Local user profile configuration</div>
+    </div>
+  </footer>
+
+  <script src="js/auth.js"></script>
+  <script src="js/main.js"></script>
+  <script src="js/profile.js"></script>
+</body>
+</html>

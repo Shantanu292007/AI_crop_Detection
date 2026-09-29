@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Create Account — Crop Doctor</title>
+  
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,600;0,700;0,800;1,600&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/auth.css">
+  <link rel="stylesheet" href="css/responsive.css">
+</head>
+<body class="auth-page">
+
+  <div class="auth-split-wrapper">
+    <div class="auth-brand-side">
+      <div class="auth-brand-header">
+        <a href="index.html" class="brand-link" style="color: var(--cream);">
+          <img src="assets/icons/logo.svg" alt="Crop Doctor" class="brand-logo-icon">
+          <div class="brand-text-wrap">
+            <span class="brand-name" style="color: var(--cream);">CROP DOCTOR</span>
+            <span class="brand-subtext" style="color: var(--yellow);">AI FIELD INTELLIGENCE</span>
+          </div>
+        </a>
+      </div>
+
+      <div class="auth-brand-content">
+        <h2 class="auth-brand-tagline">
+          Join the community for <span class="serif-accent" style="color: var(--olive-light);">healthier crops.</span>
+        </h2>
+        <p class="auth-brand-subtext">
+          Create your free field account to log observations, track seasonal foliar trends, and access educational disease remediation guides.
+        </p>
+
+        <div class="auth-feature-list">
+          <div class="auth-feature-item">
+            <div class="auth-feature-icon">✦</div>
+            <span>Unlimited free demo leaf scans</span>
+          </div>
+          <div class="auth-feature-item">
+            <div class="auth-feature-icon">✦</div>
+            <span>Personalized crop preferences</span>
+          </div>
+          <div class="auth-feature-item">
+            <div class="auth-feature-icon">✦</div>
+            <span>Complete private local history</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="auth-brand-footer">
+        © 2026 Crop Doctor • Student Community Project
+      </div>
+    </div>
+
+    <div class="auth-form-side">
+      <div class="auth-card" style="max-width: 520px;">
+        <div class="auth-header">
+          <h1>Create your field account.</h1>
+          <p>Get started with smart leaf diagnostics in seconds.</p>
+        </div>
+
+        <div id="registerAlert" class="form-alert form-alert-danger" role="alert">
+          <span id="registerAlertText"></span>
+        </div>
+
+        <form id="registerForm" class="auth-form" novalidate>
+          <div class="form-group">
+            <label for="regName" class="form-label">Full Name *</label>
+            <input type="text" id="regName" class="form-input" placeholder="e.g. Samuel Green" required autocomplete="name">
+            <span class="form-error-msg" id="nameError">Please enter your full name.</span>
+          </div>
+
+          <div class="form-group">
+            <label for="regEmail" class="form-label">Email Address *</label>
+            <input type="email" id="regEmail" class="form-input" placeholder="samuel@farmfield.com" required autocomplete="email">
+            <span class="form-error-msg" id="emailError">Please enter a valid email address.</span>
+          </div>
+
+          <div class="form-row">
+            <div class="form-group">
+              <label for="regPassword" class="form-label">Password *</label>
+              <input type="password" id="regPassword" class="form-input" placeholder="Min. 6 chars" required autocomplete="new-password">
+              <span class="form-error-msg" id="passwordError">Password must be at least 6 characters.</span>
+            </div>
+
+            <div class="form-group">
+              <label for="regConfirmPassword" class="form-label">Confirm Password *</label>
+              <input type="password" id="regConfirmPassword" class="form-input" placeholder="Repeat password" required autocomplete="new-password">
+              <span class="form-error-msg" id="confirmPasswordError">Passwords do not match.</span>
+            </div>
+          </div>
+
+          <div class="form-row">
+            <div class="form-group">
+              <label for="regLocation" class="form-label">Farm / Field Location</label>
+              <input type="text" id="regLocation" class="form-input" placeholder="e.g. Willamette Valley, OR">
+            </div>
+
+            <div class="form-group">
+              <label for="regPreferredCrop" class="form-label">Preferred Crop</label>
+              <input type="text" id="regPreferredCrop" class="form-input" placeholder="e.g. Tomato, Corn, Potato">
+            </div>
+          </div>
+
+          <button type="submit" class="btn btn-primary btn-full btn-lg" id="submitRegisterBtn">
+            Create Account
+          </button>
+        </form>
+
+        <div class="auth-footer-prompt">
+          Already have an account? 
+          <a href="login.html" class="auth-link">Log in</a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script src="js/auth.js"></script>
+  <script src="js/main.js"></script>
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      if (CropDoctorAuth.isLoggedIn()) {
+        window.location.href = 'dashboard.html';
+        return;
+      }
+
+      const form = document.getElementById('registerForm');
+      const nameInput = document.getElementById('regName');
+      const emailInput = document.getElementById('regEmail');
+      const passwordInput = document.getElementById('regPassword');
+      const confirmInput = document.getElementById('regConfirmPassword');
+      const locationInput = document.getElementById('regLocation');
+      const cropInput = document.getElementById('regPreferredCrop');
+      const alertBox = document.getElementById('registerAlert');
+      const alertText = document.getElementById('registerAlertText');
+
+      form.addEventListener('submit', (e) => {
+        e.preventDefault();
+        alertBox.classList.remove('is-visible');
+
+        [nameInput, emailInput, passwordInput, confirmInput].forEach(el => el.classList.remove('is-invalid'));
+        ['nameError', 'emailError', 'passwordError', 'confirmPasswordError'].forEach(id => {
+          document.getElementById(id).classList.remove('visible');
+        });
+
+        let hasError = false;
+
+        const name = nameInput.value.trim();
+        const email = emailInput.value.trim();
+        const password = passwordInput.value;
+        const confirm = confirmInput.value;
+
+        if (!name) {
+          nameInput.classList.add('is-invalid');
+          document.getElementById('nameError').classList.add('visible');
+          hasError = true;
+        }
+
+        if (!email || !email.includes('@') || !email.includes('.')) {
+          emailInput.classList.add('is-invalid');
+          document.getElementById('emailError').classList.add('visible');
+          hasError = true;
+        }
+
+        if (!password || password.length < 6) {
+          passwordInput.classList.add('is-invalid');
+          document.getElementById('passwordError').classList.add('visible');
+          hasError = true;
+        }
+
+        if (password !== confirm) {
+          confirmInput.classList.add('is-invalid');
+          document.getElementById('confirmPasswordError').classList.add('visible');
+          hasError = true;
+        }
+
+        if (hasError) return;
+
+        const result = CropDoctorAuth.registerUser(
+          name,
+          email,
+          password,
+          locationInput.value.trim(),
+          cropInput.value.trim()
+        );
+
+        if (result.success) {
+          showToast(`Account created for ${result.user.name}! Redirecting...`, 'success');
+          setTimeout(() => {
+            window.location.href = 'dashboard.html';
+          }, 600);
+        } else {
+          alertText.textContent = result.message || 'Registration failed. Please try again.';
+          alertBox.classList.add('is-visible');
+        }
+      });
+    });
+  </script>
+</body>
+</html>

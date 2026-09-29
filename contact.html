@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contact — Crop Doctor</title>
+  
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,600;0,700;0,800;1,600&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/responsive.css">
+</head>
+<body>
+
+  <header class="site-header">
+    <div class="container nav-container">
+      <a href="index.html" class="brand-link">
+        <img src="assets/icons/logo.svg" alt="Crop Doctor Logo" class="brand-logo-icon">
+        <div class="brand-text-wrap">
+          <span class="brand-name">CROP DOCTOR</span>
+          <span class="brand-subtext">AI FIELD INTELLIGENCE</span>
+        </div>
+      </a>
+
+      <nav class="nav-links" aria-label="Main Navigation">
+        <a href="index.html" class="nav-link">Home</a>
+        <a href="index.html#how-it-works" class="nav-link">How It Works</a>
+        <a href="index.html#features" class="nav-link">Features</a>
+        <a href="about.html" class="nav-link">About</a>
+        <a href="contact.html" class="nav-link active">Contact</a>
+      </nav>
+
+      <div class="nav-actions">
+        <a href="login.html" class="btn btn-secondary btn-sm">Log in</a>
+        <a href="register.html" class="btn btn-primary btn-sm">Get Started</a>
+      </div>
+
+      <button class="mobile-toggle" aria-label="Open mobile menu" aria-expanded="false">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round">
+          <line x1="3" y1="12" x2="21" y2="12"></line>
+          <line x1="3" y1="6" x2="21" y2="6"></line>
+          <line x1="3" y1="18" x2="21" y2="18"></line>
+        </svg>
+      </button>
+    </div>
+  </header>
+
+  <aside class="mobile-nav-drawer" aria-label="Mobile Navigation">
+    <div class="mobile-nav-links">
+      <a href="index.html">Home</a>
+      <a href="dashboard.html">Dashboard</a>
+      <a href="diagnosis.html">Diagnose</a>
+      <a href="history.html">History</a>
+      <a href="about.html">About</a>
+      <a href="contact.html" class="active">Contact</a>
+    </div>
+    <div class="mobile-nav-actions"></div>
+  </aside>
+
+  <main class="app-main">
+    <div class="container">
+      
+      <div class="page-intro" style="max-width: 680px;">
+        <span class="badge badge-forest" style="margin-bottom: 12px;">COMMUNITY CONNECT</span>
+        <h1>Get in touch with the project team.</h1>
+        <p>Have questions about the computer vision architecture, botanical datasets, or university collaborations? Send us a message.</p>
+      </div>
+
+      <div style="display: grid; grid-template-columns: 1.1fr 0.9fr; gap: 48px; align-items: start;">
+        
+        <div class="card" style="padding: 36px;">
+          <div id="contactSuccessAlert" class="form-alert form-alert-success" style="margin-bottom: 20px;">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+              <polyline points="20 6 9 17 4 12"></polyline>
+            </svg>
+            <span id="contactSuccessMsg">Thanks! Your message has been recorded for this demo.</span>
+          </div>
+
+          <form id="contactForm" class="auth-form">
+            <div class="form-group">
+              <label for="contactName" class="form-label">Your Name *</label>
+              <input type="text" id="contactName" class="form-input" placeholder="e.g. Elena Rostova" required>
+            </div>
+
+            <div class="form-group">
+              <label for="contactEmail" class="form-label">Email Address *</label>
+              <input type="email" id="contactEmail" class="form-input" placeholder="elena@agrotech.edu" required>
+            </div>
+
+            <div class="form-group">
+              <label for="contactSubject" class="form-label">Subject *</label>
+              <input type="text" id="contactSubject" class="form-input" placeholder="e.g. Model Integration Question" required>
+            </div>
+
+            <div class="form-group">
+              <label for="contactMessage" class="form-label">Message *</label>
+              <textarea id="contactMessage" class="form-input" rows="5" placeholder="Share your inquiry or project feedback here..." required style="resize: vertical;"></textarea>
+            </div>
+
+            <button type="submit" class="btn btn-primary btn-lg btn-full" id="sendMsgBtn">
+              Send Message
+            </button>
+          </form>
+        </div>
+
+        <div>
+          <div class="card card-forest" style="padding: 32px; margin-bottom: 24px;">
+            <div class="badge badge-yellow" style="margin-bottom: 14px;">STUDENT INITIATIVE</div>
+            <h3 style="color: var(--cream); margin-bottom: 12px;">Crop Doctor Open Research</h3>
+            <p style="color: #C3D6CC; font-size: 0.95rem; line-height: 1.6; margin-bottom: 20px;">
+              Crop Doctor is built as an open-source undergraduate design project focused on visual agro-diagnostics.
+            </p>
+            
+            <div style="border-top: 1px solid rgba(247, 245, 234, 0.15); padding-top: 16px; display: flex; flex-direction: column; gap: 12px;">
+              <div>
+                <strong style="color: var(--yellow); font-size: 0.85rem; text-transform: uppercase;">Location:</strong>
+                <div style="color: var(--cream); font-size: 0.92rem;">Agricultural Engineering Lab, University Campus</div>
+              </div>
+              <div>
+                <strong style="color: var(--yellow); font-size: 0.85rem; text-transform: uppercase;">Project Lead:</strong>
+                <div style="color: var(--cream); font-size: 0.92rem;">Community Student Developer Team</div>
+              </div>
+              <div>
+                <strong style="color: var(--yellow); font-size: 0.85rem; text-transform: uppercase;">Model Roadmap:</strong>
+                <div style="color: var(--cream); font-size: 0.92rem;">Ready for PyTorch / TensorFlow.js / ONNX integration</div>
+              </div>
+            </div>
+          </div>
+
+          <div class="card" style="padding: 28px;">
+            <h4 style="margin-bottom: 12px; color: var(--forest);">Frequently Asked Questions</h4>
+            <div style="display: flex; flex-direction: column; gap: 14px; font-size: 0.92rem;">
+              <div>
+                <strong style="color: var(--forest); display: block;">Is this system sending images to an external server?</strong>
+                <span class="text-muted">No. In this version, all diagnosis processing and image rendering run strictly inside your browser. No files leave your computer.</span>
+              </div>
+              <div>
+                <strong style="color: var(--forest); display: block;">Can I test this without having crop photos?</strong>
+                <span class="text-muted">Yes! The Diagnosis page includes 4 one-click sample leaves (Tomato Blight, Healthy Corn, Potato Blight, Apple Spot).</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-bottom" style="padding-top: 0; border: none;">
+      <div>© 2026 Crop Doctor • Student Community Project</div>
+      <div>Designed with HTML5, CSS3, & Vanilla JavaScript</div>
+    </div>
+  </footer>
+
+  <script src="js/auth.js"></script>
+  <script src="js/main.js"></script>
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      const form = document.getElementById('contactForm');
+      const successAlert = document.getElementById('contactSuccessAlert');
+      const nameInput = document.getElementById('contactName');
+      const emailInput = document.getElementById('contactEmail');
+      const subjectInput = document.getElementById('contactSubject');
+      const messageInput = document.getElementById('contactMessage');
+
+      form.addEventListener('submit', (e) => {
+        e.preventDefault();
+
+        const name = nameInput.value.trim();
+        const email = emailInput.value.trim();
+        const subject = subjectInput.value.trim();
+        const msg = messageInput.value.trim();
+
+        if (!name || !email || !subject || !msg) {
+          showToast('Please fill out all contact fields.', 'error');
+          return;
+        }
+
+        successAlert.classList.add('is-visible');
+        showToast('Thanks! Your message has been recorded for this demo.', 'success');
+
+        form.reset();
+
+        setTimeout(() => {
+          successAlert.classList.remove('is-visible');
+        }, 6000);
+      });
+    });
+  </script>
+</body>
+</html>

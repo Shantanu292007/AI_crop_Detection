@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Crop Leaf Diagnosis — Crop Doctor</title>
+  
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,600;0,700;0,800;1,600&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/dashboard.css">
+  <link rel="stylesheet" href="css/responsive.css">
+</head>
+<body>
+
+  <header class="site-header">
+    <div class="container nav-container">
+      <a href="index.html" class="brand-link">
+        <img src="assets/icons/logo.svg" alt="Crop Doctor Logo" class="brand-logo-icon">
+        <div class="brand-text-wrap">
+          <span class="brand-name">CROP DOCTOR</span>
+          <span class="brand-subtext">AI FIELD INTELLIGENCE</span>
+        </div>
+      </a>
+
+      <nav class="nav-links" aria-label="App Navigation">
+        <a href="dashboard.html" class="nav-link">Dashboard</a>
+        <a href="diagnosis.html" class="nav-link active">Diagnose</a>
+        <a href="history.html" class="nav-link">History</a>
+        <a href="profile.html" class="nav-link">Profile</a>
+        <a href="about.html" class="nav-link">About</a>
+      </nav>
+
+      <div class="nav-actions"></div>
+
+      <button class="mobile-toggle" aria-label="Open mobile menu" aria-expanded="false">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round">
+          <line x1="3" y1="12" x2="21" y2="12"></line>
+          <line x1="3" y1="6" x2="21" y2="6"></line>
+          <line x1="3" y1="18" x2="21" y2="18"></line>
+        </svg>
+      </button>
+    </div>
+  </header>
+
+  <aside class="mobile-nav-drawer" aria-label="Mobile Navigation">
+    <div class="mobile-nav-links">
+      <a href="dashboard.html">Dashboard</a>
+      <a href="diagnosis.html" class="active">Diagnose</a>
+      <a href="history.html">History</a>
+      <a href="profile.html">Profile</a>
+      <a href="about.html">About</a>
+      <a href="contact.html">Contact</a>
+    </div>
+    <div class="mobile-nav-actions"></div>
+  </aside>
+
+  <main class="app-main">
+    <div class="container">
+      
+      <div class="page-intro">
+        <h1>Let's read your crop.</h1>
+        <p>Upload a clear image of the affected leaf for rapid AI-assisted pattern recognition and care guidance.</p>
+      </div>
+
+      <div class="diagnosis-layout">
+        
+        <div class="dropzone-container">
+          <input type="file" id="leafFileInput" accept="image/jpeg,image/jpg,image/png,image/webp" style="display: none;">
+
+          <div class="upload-dropzone" id="uploadDropzone">
+            <div id="dropzonePrompt" style="display: flex; flex-direction: column; align-items: center;">
+              <div class="dropzone-icon">
+                <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
+                  <polyline points="17 8 12 3 7 8"></polyline>
+                  <line x1="12" y1="3" x2="12" y2="15"></line>
+                </svg>
+              </div>
+              <h3 class="dropzone-title">Drop your leaf photo here</h3>
+              <p class="dropzone-subtext">or click to browse from your device</p>
+              
+              <div class="file-type-chips">
+                <span class="file-chip">JPG</span>
+                <span class="file-chip">JPEG</span>
+                <span class="file-chip">PNG</span>
+                <span class="file-chip">WEBP</span>
+                <span class="file-chip">Max 10MB</span>
+              </div>
+            </div>
+
+            <div class="upload-preview-area" id="uploadPreviewArea">
+              <div class="preview-image-box">
+                <img id="previewImg" src="" alt="Crop Leaf Preview">
+                <div class="preview-overlay-info">
+                  <span id="previewFilename">leaf-photo.jpg</span>
+                  <span id="previewFilesize">1.4 MB</span>
+                </div>
+              </div>
+
+              <div style="display: flex; gap: 10px; margin-top: 8px;">
+                <button type="button" class="btn btn-secondary btn-sm" id="changeImgBtn">
+                  Choose Another Image
+                </button>
+                <button type="button" class="btn btn-secondary btn-sm" id="clearPreviewBtn" onclick="document.getElementById('clearBtn').click()">
+                  Remove
+                </button>
+              </div>
+            </div>
+          </div>
+
+          <div class="upload-actions-bar">
+            <button type="button" class="btn btn-primary btn-lg" id="analyzeBtn" disabled style="flex: 2;">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+                <circle cx="11" cy="11" r="8"></circle>
+                <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+              </svg>
+              Analyze Crop
+            </button>
+            <button type="button" class="btn btn-secondary btn-lg" id="clearBtn" style="flex: 1;">
+              Clear
+            </button>
+          </div>
+
+          <div class="sample-leaf-section">
+            <div class="sample-leaf-header">
+              <span style="color: var(--yellow);">✦</span>
+              Don't have a photo on hand? Try a sample leaf:
+            </div>
+                                    <div class="sample-leaf-options">
+              <button type="button" class="sample-leaf-btn" data-sample-src="assets/images/banana-aphid-infestation.jpg" data-sample-name="aphid-infestation.jpg">
+                <img src="assets/images/banana-aphid-infestation.jpg" alt="Aphid Infestation">
+                <span>Aphid Infestation</span>
+              </button>
+
+              <button type="button" class="sample-leaf-btn" data-sample-src="assets/images/corn-ear-rot.jpg" data-sample-name="maize-ear-problem.jpg">
+                <img src="assets/images/corn-ear-rot.jpg" alt="Maize Ear Problem">
+                <span>Maize Ear Problem</span>
+              </button>
+
+              <button type="button" class="sample-leaf-btn" data-sample-src="assets/images/apple-black-rot.jpg" data-sample-name="leaf-fungal-disease.jpg">
+                <img src="assets/images/apple-black-rot.jpg" alt="Leaf Fungal Disease">
+                <span>Leaf Fungal Disease</span>
+              </button>
+
+              <button type="button" class="sample-leaf-btn" data-sample-src="assets/images/sample-tomato-blight.svg" data-sample-name="tomato-early-blight-sample.svg">
+                <img src="assets/images/sample-tomato-blight.svg" alt="Tomato Blight Sample">
+                <span>Tomato Blight</span>
+              </button>
+
+              <button type="button" class="sample-leaf-btn" data-sample-src="assets/images/sample-healthy-corn.svg" data-sample-name="healthy-corn-sample.svg">
+                <img src="assets/images/sample-healthy-corn.svg" alt="Healthy Corn Sample">
+                <span>Healthy Corn</span>
+              </button>
+
+              <button type="button" class="sample-leaf-btn" data-sample-src="assets/images/sample-potato-blight.svg" data-sample-name="potato-blight-sample.svg">
+                <img src="assets/images/sample-potato-blight.svg" alt="Potato Blight Sample">
+                <span>Potato Blight</span>
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <aside class="diagnosis-sidebar">
+          <div class="tips-card">
+            <h3>
+              <span style="color: var(--green);">✦</span> For better results:
+            </h3>
+            <ul class="tips-list">
+              <li class="tips-item">
+                <span class="tips-check-icon">✓</span>
+                <div>
+                  <strong>Use natural daylight:</strong>
+                  <p style="font-size: 0.9rem; color: var(--muted); margin-top: 2px;">Overcast or early morning sunlight provides the clearest contrast without color distortion.</p>
+                </div>
+              </li>
+              <li class="tips-item">
+                <span class="tips-check-icon">✓</span>
+                <div>
+                  <strong>Keep the leaf in sharp focus:</strong>
+                  <p style="font-size: 0.9rem; color: var(--muted); margin-top: 2px;">Hold your camera steady around 15–25 cm away from the leaf blade.</p>
+                </div>
+              </li>
+              <li class="tips-item">
+                <span class="tips-check-icon">✓</span>
+                <div>
+                  <strong>Avoid blurry images:</strong>
+                  <p style="font-size: 0.9rem; color: var(--muted); margin-top: 2px;">Motion blur prevents algorithmic edge and lesion pattern extraction.</p>
+                </div>
+              </li>
+              <li class="tips-item">
+                <span class="tips-check-icon">✓</span>
+                <div>
+                  <strong>Include the affected area clearly:</strong>
+                  <p style="font-size: 0.9rem; color: var(--muted); margin-top: 2px;">Capture the boundary between diseased tissue and healthy leaf green.</p>
+                </div>
+              </li>
+              <li class="tips-item">
+                <span class="tips-check-icon">✓</span>
+                <div>
+                  <strong>Use a single leaf when possible:</strong>
+                  <p style="font-size: 0.9rem; color: var(--muted); margin-top: 2px;">Single leaf close-ups yield substantially higher diagnostic accuracy than whole-canopy shots.</p>
+                </div>
+              </li>
+            </ul>
+          </div>
+
+          <div class="card card-forest" style="padding: 24px;">
+            <div style="font-size: 0.78rem; font-weight: 700; letter-spacing: 0.1em; color: var(--yellow); margin-bottom: 8px;">
+              DEMO AI ENGINE ACTIVE
+            </div>
+            <p style="font-size: 0.9rem; line-height: 1.5; color: #C3D6CC;">
+              This diagnostic runs on demonstration botanical data. The modular service architecture (<code style="color: var(--yellow);">js/ai-service.js</code>) is designed to easily plug into your trained PyTorch/TensorFlow backend.
+            </p>
+          </div>
+        </aside>
+      </div>
+
+    </div>
+  </main>
+
+  <div class="scan-overlay-modal" id="scanOverlayModal" role="dialog" aria-modal="true" aria-labelledby="scanStepMsg">
+    <div class="scan-dialog-card">
+      <div class="scan-animation-container">
+        <div class="scan-radar-circle"></div>
+        <img src="assets/icons/logo.svg" alt="Scanning..." class="scan-inner-leaf">
+      </div>
+
+      <div class="badge badge-forest" style="margin-bottom: 12px;">AI FIELD INFERENCE</div>
+      <h3 class="scan-loading-step" id="scanStepMsg">Reading your crop...</h3>
+      <p class="scan-loading-detail">Extracting foliar chlorophyll and lesion features</p>
+
+      <div class="scan-modal-progress">
+        <div class="scan-modal-progress-bar" id="scanProgressBar"></div>
+      </div>
+
+      <div style="font-size: 0.78rem; color: var(--muted); font-family: monospace;">
+        MODEL: CropDoctor-BotNet-v1.2 (Demo Dataset)
+      </div>
+    </div>
+  </div>
+
+  <footer class="site-footer">
+    <div class="container footer-bottom" style="padding-top: 0; border: none;">
+      <div>© 2026 Crop Doctor • Student Community Project</div>
+      <div>Educational AI Demonstration Tool</div>
+    </div>
+  </footer>
+
+  <script src="js/auth.js"></script>
+  <script src="js/ai-service.js"></script>
+  <script src="js/main.js"></script>
+  <script src="js/diagnosis.js"></script>
+</body>
+</html>

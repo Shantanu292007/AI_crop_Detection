@@ -1,0 +1,359 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Crop Doctor — AI Field Intelligence & Crop Disease Detection</title>
+  <meta name="description" content="Smarter crop care, one leaf at a time. AI-powered disease detection and practical field guidance for farmers and growers.">
+  
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,600;0,700;0,800;1,600;1,700&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/responsive.css">
+</head>
+<body>
+
+  <header class="site-header">
+    <div class="container nav-container">
+      <a href="index.html" class="brand-link" aria-label="Crop Doctor Homepage">
+        <img src="assets/icons/logo.svg" alt="Crop Doctor Logo" class="brand-logo-icon">
+        <div class="brand-text-wrap">
+          <span class="brand-name">CROP DOCTOR</span>
+          <span class="brand-subtext">AI FIELD INTELLIGENCE</span>
+        </div>
+      </a>
+
+      <nav class="nav-links" aria-label="Main Navigation">
+        <a href="index.html" class="nav-link active">Home</a>
+        <a href="#how-it-works" class="nav-link">How It Works</a>
+        <a href="#features" class="nav-link">Features</a>
+        <a href="about.html" class="nav-link">About</a>
+        <a href="contact.html" class="nav-link">Contact</a>
+      </nav>
+
+      <div class="nav-actions">
+        <a href="login.html" class="btn btn-secondary btn-sm">Log in</a>
+        <a href="register.html" class="btn btn-primary btn-sm">Get Started</a>
+      </div>
+
+      <button class="mobile-toggle" aria-label="Open mobile menu" aria-expanded="false">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round">
+          <line x1="3" y1="12" x2="21" y2="12"></line>
+          <line x1="3" y1="6" x2="21" y2="6"></line>
+          <line x1="3" y1="18" x2="21" y2="18"></line>
+        </svg>
+      </button>
+    </div>
+  </header>
+
+  <aside class="mobile-nav-drawer" aria-label="Mobile Navigation">
+    <div class="mobile-nav-links">
+      <a href="index.html" class="active">Home</a>
+      <a href="#how-it-works">How It Works</a>
+      <a href="#features">Features</a>
+      <a href="about.html">About</a>
+      <a href="contact.html">Contact</a>
+      <a href="dashboard.html">Dashboard</a>
+      <a href="diagnosis.html">Diagnose</a>
+      <a href="history.html">History</a>
+      <a href="profile.html">Profile</a>
+    </div>
+    <div class="mobile-nav-actions">
+      <a href="login.html" class="btn btn-secondary btn-full">Log in</a>
+      <a href="register.html" class="btn btn-primary btn-full">Get Started</a>
+    </div>
+  </aside>
+
+  <main>
+    <section class="hero-section">
+      <div class="container hero-grid">
+        <div class="hero-content">
+          <div class="hero-badge-wrap">
+            <span class="badge badge-forest">
+              <span style="color: var(--yellow);">✦</span> BUILT FOR THE FIELD
+            </span>
+          </div>
+
+          <h1 class="hero-title">
+            A clearer diagnosis for <span class="serif-accent">healthier crops.</span>
+          </h1>
+
+          <p class="hero-lead">
+            Upload a clear photo of your crop leaf and get a simple AI-powered disease assessment with practical next steps.
+          </p>
+
+          <div class="hero-cta-group">
+            <a href="diagnosis.html" class="btn btn-primary btn-lg">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M23 19a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h4l2-3h6l2 3h4a2 2 0 0 1 2 2z"></path>
+                <circle cx="12" cy="13" r="4"></circle>
+              </svg>
+              Start a Diagnosis
+            </a>
+            <a href="register.html" class="btn btn-secondary btn-lg">
+              Create Free Account
+            </a>
+          </div>
+
+          <div class="hero-trust-list">
+            <div class="trust-item">
+              <span class="check-icon">✓</span> Simple to use
+            </div>
+            <div class="trust-item">
+              <span class="check-icon">✓</span> Farmer-friendly guidance
+            </div>
+            <div class="trust-item">
+              <span class="check-icon">✓</span> Private image handling
+            </div>
+          </div>
+        </div>
+
+        <div class="hero-visual-wrapper">
+          <div class="hero-visual-card">
+            <div class="card-scan-header">
+              <span class="scan-serial">FIELD SCAN / 024</span>
+              <div class="scan-live-dot">
+                <span class="live-indicator"></span>
+                ACTIVE MONITOR
+              </div>
+            </div>
+
+            <div class="hero-leaf-preview">
+              <img src="assets/images/hero-card-leaf.svg" alt="AI Leaf Scan Analysis Preview">
+            </div>
+
+            <div class="card-scan-body">
+              <div class="scan-read-label">LATEST READ</div>
+              <h3 class="scan-condition-title">Tomato Early Blight</h3>
+
+              <div class="scan-metrics-row">
+                <div class="confidence-display">
+                  <span class="confidence-number">87%</span>
+                  <span class="confidence-label">confidence</span>
+                </div>
+                <span class="scan-status-pill">Review recommended</span>
+              </div>
+
+              <div class="scan-progress-bar">
+                <div class="scan-progress-fill"></div>
+              </div>
+
+              <div class="scan-footer-note">
+                <span>Spectral analysis verified</span>
+                <span style="color: var(--yellow);">Alternaria solani</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section section-cream-dark" id="how-it-works">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-tag">FIELD PROCEDURE</span>
+          <h2>Three simple steps to clarify crop health.</h2>
+          <p>Designed for fast, reliable decision-making in the field or greenhouse.</p>
+        </div>
+
+        <div class="steps-grid">
+          <div class="step-card">
+            <span class="step-number">01</span>
+            <h3>POINT YOUR CAMERA</h3>
+            <p>Take a clear photo of the affected leaf in natural daylight. Capture both healthy tissue and lesion margins for the best reading.</p>
+          </div>
+
+          <div class="step-card">
+            <span class="step-number">02</span>
+            <h3>GET THE FIELD READ</h3>
+            <p>Our AI analyzes visible patterns and identifies the most likely crop condition, rating confidence and disease severity.</p>
+          </div>
+
+          <div class="step-card">
+            <span class="step-number">03</span>
+            <h3>TAKE THE NEXT STEP</h3>
+            <p>Get practical information about the condition and suggested care actions, organic remediation, and seasonal prevention.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section section-cream" id="features">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-tag">CAPABILITIES</span>
+          <h2>Helpful technology for everyday crop decisions.</h2>
+          <p>Equipping growers, students, and agronomists with accessible visual intelligence.</p>
+        </div>
+
+        <div class="features-grid">
+          <div class="feature-card">
+            <div class="feature-icon-box">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M11 20A7 7 0 0 1 9.8 6.1C15.5 5 17 4.48 19 2c1 2 2 4.18 2 8 0 5.5-4.78 10-10 10Z"/>
+                <path d="M2 21c0-3 1.85-5.36 5.08-6C9.5 14.52 12 13 13 12"/>
+              </svg>
+            </div>
+            <h3>1. AI Crop Detection</h3>
+            <p>Detect possible crop diseases from uploaded leaf images using modern visual feature classification models.</p>
+          </div>
+
+          <div class="feature-card">
+            <div class="feature-icon-box">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <circle cx="12" cy="12" r="10"></circle>
+                <line x1="12" y1="16" x2="12" y2="12"></line>
+                <line x1="12" y1="8" x2="12.01" y2="8"></line>
+              </svg>
+            </div>
+            <h3>2. Disease Information</h3>
+            <p>Show disease name, biological classification, common visual symptoms, and clear botanical background information.</p>
+          </div>
+
+          <div class="feature-card">
+            <div class="feature-icon-box">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
+              </svg>
+            </div>
+            <h3>3. Treatment Guidance</h3>
+            <p>Provide practical care, physical pruning instructions, safe fungicide guidance, and cultural prevention suggestions.</p>
+          </div>
+
+          <div class="feature-card">
+            <div class="feature-icon-box">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <circle cx="12" cy="12" r="10"></circle>
+                <polyline points="12 6 12 12 16 14"></polyline>
+              </svg>
+            </div>
+            <h3>4. Detection History</h3>
+            <p>Save previous diagnoses locally for later reference, longitudinal monitoring, and seasonal comparison across beds.</p>
+          </div>
+
+          <div class="feature-card">
+            <div class="feature-icon-box">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M22 12h-4l-3 9L9 3l-3 9H2"></path>
+              </svg>
+            </div>
+            <h3>5. Confidence Score</h3>
+            <p>Display transparent confidence percentages and severity ratings so you always know when to double-check in the field.</p>
+          </div>
+
+          <div class="feature-card">
+            <div class="feature-icon-box">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path>
+                <circle cx="9" cy="7" r="4"></circle>
+                <path d="M23 21v-2a4 4 0 0 0-3-3.87"></path>
+                <path d="M16 3.13a4 4 0 0 1 0 7.75"></path>
+              </svg>
+            </div>
+            <h3>6. Farmer-Friendly Interface</h3>
+            <p>Clean, clutter-free language without confusing academic jargon. Clear cards designed for high sunlight readability on phones.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section section-white" id="about">
+      <div class="container">
+        <div class="section-header text-left" style="max-width: 800px; margin: 0 auto 36px;">
+          <span class="section-tag">PROJECT MISSION</span>
+          <h2>Technology that speaks the language of the field.</h2>
+          <p style="font-size: 1.15rem; line-height: 1.7; margin-bottom: 24px;">
+            Crop Doctor is a student and community project that explores how artificial intelligence and computer vision can assist farmers in identifying possible crop diseases from leaf images. By combining agricultural science with accessible web technology, our goal is to lower the barrier for timely crop protection.
+          </p>
+          
+          <div class="disclaimer-box">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <circle cx="12" cy="12" r="10"></circle>
+              <line x1="12" y1="8" x2="12" y2="12"></line>
+              <line x1="12" y1="16" x2="12.01" y2="16"></line>
+            </svg>
+            <p>
+              <strong>Important Advisory Notice:</strong> Crop Doctor is an educational and demonstration project. The assessments provided are computer-generated approximations and must not replace professional on-site agricultural extension consultations, accredited laboratory tissue testing, or certified agronomic diagnoses.
+            </p>
+          </div>
+
+          <div style="margin-top: 24px;">
+            <a href="about.html" class="btn btn-secondary">
+              Read More About Our Research & Architecture →
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section section-cream">
+      <div class="container">
+        <div class="cta-banner">
+          <div class="cta-content">
+            <span class="badge badge-cream" style="margin-bottom: 16px;">READY IN THE FIELD</span>
+            <h2>Have a crop to check?</h2>
+            <p>Start your first field diagnosis in a few simple steps. No app store downloads or complex equipment needed.</p>
+            <a href="diagnosis.html" class="btn btn-accent btn-lg">
+              Start Diagnosis
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-top">
+        <div class="footer-brand">
+          <div class="brand-link">
+            <img src="assets/icons/logo.svg" alt="Crop Doctor Logo" class="brand-logo-icon">
+            <div class="brand-text-wrap">
+              <span class="brand-name">CROP DOCTOR</span>
+              <span class="brand-subtext" style="color: var(--yellow);">AI FIELD INTELLIGENCE</span>
+            </div>
+          </div>
+          <p>
+            "Smarter crop care, one leaf at a time." An educational and community web application dedicated to healthier harvests.
+          </p>
+        </div>
+
+        <div>
+          <h4 class="footer-title">Navigation</h4>
+          <ul class="footer-links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="#how-it-works">How It Works</a></li>
+            <li><a href="#features">Features</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="contact.html">Contact</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <h4 class="footer-title">Field Access</h4>
+          <ul class="footer-links">
+            <li><a href="diagnosis.html">Crop Diagnosis</a></li>
+            <li><a href="dashboard.html">Farmer Dashboard</a></li>
+            <li><a href="history.html">Detection History</a></li>
+            <li><a href="login.html">Demo Login</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <div>
+          © 2026 Crop Doctor. Student Community Project.
+        </div>
+        <div>
+          Educational & Demonstration Tool • Not for commercial certification
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/auth.js"></script>
+  <script src="js/main.js"></script>
+</body>
+</html>

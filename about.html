@@ -1,0 +1,288 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>About Crop Doctor — AI Field Intelligence</title>
+  
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,600;0,700;0,800;1,600&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/responsive.css">
+  <style>
+    .pipeline-timeline {
+      display: grid;
+      grid-template-columns: repeat(5, 1fr);
+      gap: 16px;
+      margin: 48px 0;
+      position: relative;
+    }
+
+    .pipeline-step {
+      background: var(--white);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-md);
+      padding: 24px 18px;
+      text-align: center;
+      position: relative;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      box-shadow: var(--shadow-xs);
+    }
+
+    .pipeline-step::after {
+      content: '→';
+      position: absolute;
+      right: -16px;
+      top: 50%;
+      transform: translateY(-50%);
+      font-size: 1.5rem;
+      color: var(--olive);
+      font-weight: 700;
+      z-index: 2;
+    }
+
+    .pipeline-step:last-child::after {
+      display: none;
+    }
+
+    .pipeline-icon {
+      width: 48px;
+      height: 48px;
+      border-radius: 50%;
+      background: var(--cream);
+      color: var(--forest);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 14px;
+      border: 1px solid var(--border);
+    }
+
+    .pipeline-step h4 {
+      font-size: 0.95rem;
+      color: var(--forest);
+      margin-bottom: 6px;
+    }
+
+    .pipeline-step p {
+      font-size: 0.78rem;
+      color: var(--muted);
+      line-height: 1.4;
+    }
+
+    @media (max-width: 900px) {
+      .pipeline-timeline {
+        grid-template-columns: 1fr;
+      }
+      .pipeline-step::after {
+        content: '↓';
+        right: 50%;
+        top: auto;
+        bottom: -20px;
+        transform: translateX(50%);
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <header class="site-header">
+    <div class="container nav-container">
+      <a href="index.html" class="brand-link">
+        <img src="assets/icons/logo.svg" alt="Crop Doctor Logo" class="brand-logo-icon">
+        <div class="brand-text-wrap">
+          <span class="brand-name">CROP DOCTOR</span>
+          <span class="brand-subtext">AI FIELD INTELLIGENCE</span>
+        </div>
+      </a>
+
+      <nav class="nav-links" aria-label="Main Navigation">
+        <a href="index.html" class="nav-link">Home</a>
+        <a href="index.html#how-it-works" class="nav-link">How It Works</a>
+        <a href="index.html#features" class="nav-link">Features</a>
+        <a href="about.html" class="nav-link active">About</a>
+        <a href="contact.html" class="nav-link">Contact</a>
+      </nav>
+
+      <div class="nav-actions">
+        <a href="login.html" class="btn btn-secondary btn-sm">Log in</a>
+        <a href="register.html" class="btn btn-primary btn-sm">Get Started</a>
+      </div>
+
+      <button class="mobile-toggle" aria-label="Open mobile menu" aria-expanded="false">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round">
+          <line x1="3" y1="12" x2="21" y2="12"></line>
+          <line x1="3" y1="6" x2="21" y2="6"></line>
+          <line x1="3" y1="18" x2="21" y2="18"></line>
+        </svg>
+      </button>
+    </div>
+  </header>
+
+  <aside class="mobile-nav-drawer" aria-label="Mobile Navigation">
+    <div class="mobile-nav-links">
+      <a href="index.html">Home</a>
+      <a href="dashboard.html">Dashboard</a>
+      <a href="diagnosis.html">Diagnose</a>
+      <a href="history.html">History</a>
+      <a href="about.html" class="active">About</a>
+      <a href="contact.html">Contact</a>
+    </div>
+    <div class="mobile-nav-actions"></div>
+  </aside>
+
+  <main class="app-main">
+    <div class="container">
+      
+      <div style="max-width: 820px; margin-bottom: 50px;">
+        <span class="badge badge-forest" style="margin-bottom: 16px;">STUDENT & COMMUNITY PROJECT</span>
+        <h1>Bridging computer vision with everyday agricultural care.</h1>
+        <p style="font-size: 1.25rem; line-height: 1.7; color: var(--text-light); margin-top: 18px;">
+          Crop Doctor explores how machine learning models can democratize early plant disease diagnostics for smallholder farmers, community gardens, and agricultural students.
+        </p>
+      </div>
+
+      <div class="disclaimer-box" style="margin-bottom: 50px;">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <circle cx="12" cy="12" r="10"></circle>
+          <line x1="12" y1="8" x2="12" y2="12"></line>
+          <line x1="12" y1="16" x2="12.01" y2="16"></line>
+        </svg>
+        <div>
+          <strong style="color: var(--forest); font-size: 1rem; display: block; margin-bottom: 4px;">Important Educational Notice:</strong>
+          <p>
+            Crop Doctor is a non-commercial student research demonstration tool. The diagnoses and treatment suggestions provided are informational and must <strong>never replace certified on-site agronomic assessments</strong>, professional plant pathologist consultations, or accredited laboratory tissue culture tests.
+          </p>
+        </div>
+      </div>
+
+      <section style="margin-bottom: 60px;">
+        <h2 style="font-size: 1.85rem; margin-bottom: 12px;">Visual Pipeline: From Leaf to Insight</h2>
+        <p class="text-muted">How image-based crop disease detection translates raw mobile photography into actionable farming guidance.</p>
+
+        <div class="pipeline-timeline">
+          <div class="pipeline-step">
+            <div class="pipeline-icon">📷</div>
+            <h4>1. Image Capture</h4>
+            <p>High-resolution close-up of leaf symptoms taken in field daylight.</p>
+          </div>
+
+          <div class="pipeline-step">
+            <div class="pipeline-icon">⚙️</div>
+            <h4>2. Preprocessing</h4>
+            <p>Foliar normalization, background suppression, color equalization.</p>
+          </div>
+
+          <div class="pipeline-step">
+            <div class="pipeline-icon">🧠</div>
+            <h4>3. AI Model</h4>
+            <p>Convolutional neural feature extraction & botanical pattern classification.</p>
+          </div>
+
+          <div class="pipeline-step">
+            <div class="pipeline-icon">📊</div>
+            <h4>4. Prediction</h4>
+            <p>Condition hypothesis generated with quantified confidence scoring.</p>
+          </div>
+
+          <div class="pipeline-step">
+            <div class="pipeline-icon">🌱</div>
+            <h4>5. Farmer Guidance</h4>
+            <p>Physical pruning, cultural prevention, and organic remediation actions.</p>
+          </div>
+        </div>
+      </section>
+
+      <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 36px; margin-bottom: 60px;">
+        <div class="card">
+          <h3 style="margin-bottom: 14px;">How AI Assists Modern Agriculture</h3>
+          <p style="font-size: 0.98rem; line-height: 1.65; color: var(--text-light); margin-bottom: 16px;">
+            Foliar diseases such as early blight, downy mildew, and leaf spot destroy millions of tons of staple crops annually. In many rural communities, access to certified agronomists or extension agents requires days of travel or steep advisory fees.
+          </p>
+          <p style="font-size: 0.98rem; line-height: 1.65; color: var(--text-light);">
+            Computer vision models trained on botanical image corpora (such as PlantVillage) can identify macroscopic lesion geometry, chlorotic halos, and sporulation patterns in fractions of a second, alerting growers early before entire fields are compromised.
+          </p>
+        </div>
+
+        <div class="card">
+          <h3 style="margin-bottom: 14px;">Key Benefits for Growers</h3>
+          <ul class="result-bullet-list">
+            <li class="result-bullet-item">
+              <strong>Early Intervention:</strong> Spot foliar stress before pathogens spread systemically to stems and fruit.
+            </li>
+            <li class="result-bullet-item">
+              <strong>Reduced Chemical Dependency:</strong> Avoid broad-spectrum spray overapplication by pinpointing exact conditions.
+            </li>
+            <li class="result-bullet-item">
+              <strong>Farmer-First Language:</strong> Practical steps designed for practical growers rather than theoretical academic papers.
+            </li>
+            <li class="result-bullet-item">
+              <strong>Educational Empowerment:</strong> Builds visual diagnostic skills for vocational students and generational farmers.
+            </li>
+          </ul>
+        </div>
+      </div>
+
+      <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 36px; margin-bottom: 60px;">
+        <div class="card">
+          <h3 style="margin-bottom: 14px;">Known Limitations</h3>
+          <ul class="result-bullet-list">
+            <li class="result-bullet-item">
+              <strong>Foliar-Only Perspective:</strong> Optical leaf analysis cannot detect subsurface soil nematodes, root rot pathogens, or deep vascular wilt without destructive sampling.
+            </li>
+            <li class="result-bullet-item">
+              <strong>Lighting & Focus Sensitivity:</strong> Heavy glare, flash reflection, or lens blur can distort fine lesion concentric rings.
+            </li>
+            <li class="result-bullet-item">
+              <strong>Symptom Overlap:</strong> Nutrient deficiencies (like nitrogen or magnesium chlorosis) can occasionally mimic viral mosaic or fungal blights.
+            </li>
+          </ul>
+        </div>
+
+        <div class="card card-forest">
+          <h3 style="margin-bottom: 14px; color: var(--cream);">Future Development Roadmap</h3>
+          <ul class="result-bullet-list">
+            <li class="result-bullet-item" style="color: #C3D6CC;">
+              <strong>Live Backend Model Connection:</strong> Seamless integration with custom PyTorch ResNet-50 and EfficientNet weights hosted via FastAPI.
+            </li>
+            <li class="result-bullet-item" style="color: #C3D6CC;">
+              <strong>Offline PWA Support:</strong> Client-side TensorFlow.js model execution for remote fields without cellular reception.
+            </li>
+            <li class="result-bullet-item" style="color: #C3D6CC;">
+              <strong>Multilingual Voice Guidance:</strong> Translating recommendations into regional agrarian dialects.
+            </li>
+            <li class="result-bullet-item" style="color: #C3D6CC;">
+              <strong>Weather Sensor Sync:</strong> Integrating local humidity and precipitation forecasts into late-blight risk models.
+            </li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="cta-banner" style="margin-bottom: 40px;">
+        <div class="cta-content">
+          <h2>Ready to test Crop Doctor?</h2>
+          <p>Experience the demonstration scanning interface with sample leaves or your own crop photographs.</p>
+          <a href="diagnosis.html" class="btn btn-accent btn-lg">
+            Open Diagnosis Studio
+          </a>
+        </div>
+      </div>
+
+    </div>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-bottom" style="padding-top: 0; border: none;">
+      <div>© 2026 Crop Doctor • Student Community Project</div>
+      <div>Technology that speaks the language of the field.</div>
+    </div>
+  </footer>
+
+  <script src="js/auth.js"></script>
+  <script src="js/main.js"></script>
+</body>
+</html>

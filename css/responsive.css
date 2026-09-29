@@ -1,0 +1,303 @@
+/* ==========================================================================
+   CROP DOCTOR — Responsive Stylesheet (responsive.css)
+   ========================================================================== */
+
+.mobile-nav-drawer {
+  position: fixed;
+  top: var(--nav-height);
+  left: 0;
+  width: 100%;
+  height: calc(100vh - var(--nav-height));
+  background: var(--cream);
+  z-index: 999;
+  display: flex;
+  flex-direction: column;
+  padding: 28px 24px;
+  transform: translateY(-100%);
+  opacity: 0;
+  pointer-events: none;
+  transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1), opacity 0.25s ease;
+  overflow-y: auto;
+  border-bottom: 2px solid var(--forest);
+}
+
+.mobile-nav-drawer.is-open {
+  transform: translateY(0);
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.mobile-nav-links {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+  margin-bottom: 32px;
+}
+
+.mobile-nav-links a {
+  font-family: var(--font-serif);
+  font-size: 1.45rem;
+  color: var(--forest);
+  padding: 8px 0;
+  border-bottom: 1px solid var(--border);
+}
+
+.mobile-nav-links a.active {
+  color: var(--green);
+  font-weight: 700;
+}
+
+.mobile-nav-actions {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+@media (max-width: 1024px) {
+  .hero-grid {
+    grid-template-columns: 1fr;
+    gap: 48px;
+  }
+
+  .hero-visual-card {
+    transform: none;
+    max-width: 580px;
+    margin: 0 auto;
+  }
+
+  .hero-visual-card:hover {
+    transform: none;
+  }
+
+  .stats-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .steps-grid {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+
+  .features-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .diagnosis-layout,
+  .result-layout,
+  .profile-layout {
+    grid-template-columns: 1fr;
+  }
+
+  .result-image-panel {
+    position: static;
+  }
+
+  .auth-split-wrapper {
+    flex-direction: column;
+  }
+
+  .auth-brand-side {
+    padding: 40px 24px;
+    min-height: auto;
+  }
+
+  .auth-brand-content {
+    margin: 20px 0;
+  }
+
+  .footer-top {
+    grid-template-columns: 1fr;
+    gap: 36px;
+  }
+}
+
+@media (max-width: 768px) {
+  :root {
+    --nav-height: 70px;
+  }
+
+  .nav-links,
+  .nav-actions {
+    display: none;
+  }
+
+  .mobile-toggle {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .section {
+    padding: 60px 0;
+  }
+
+  .hero-section {
+    padding: 40px 0 60px;
+  }
+
+  .hero-title {
+    font-size: 2.3rem;
+  }
+
+  .hero-lead {
+    font-size: 1.05rem;
+  }
+
+  .hero-cta-group {
+    flex-direction: column;
+    width: 100%;
+  }
+
+  .hero-cta-group .btn {
+    width: 100%;
+  }
+
+  .hero-trust-list {
+    flex-direction: column;
+    gap: 12px;
+  }
+
+  .features-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .cta-banner {
+    padding: 44px 24px;
+    border-radius: var(--radius-lg);
+  }
+
+  .dashboard-hero-card {
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 28px 24px;
+    gap: 24px;
+  }
+
+  .dashboard-hero-action {
+    width: 100%;
+  }
+
+  .dashboard-hero-action .btn {
+    width: 100%;
+  }
+
+  .stats-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .diagnosis-cards-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .sample-leaf-options {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .upload-actions-bar {
+    flex-direction: column;
+  }
+
+  .upload-actions-bar .btn {
+    width: 100%;
+  }
+
+  .result-header-row {
+    flex-direction: column;
+    gap: 16px;
+  }
+
+  .result-score-badge {
+    text-align: left;
+  }
+
+  .result-meta-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .history-controls {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .search-box-wrap {
+    width: 100%;
+  }
+
+  .history-table, 
+  .history-table thead, 
+  .history-table tbody, 
+  .history-table th, 
+  .history-table td, 
+  .history-table tr {
+    display: block;
+  }
+
+  .history-table thead tr {
+    position: absolute;
+    top: -9999px;
+    left: -9999px;
+  }
+
+  .history-table tr {
+    background: var(--white);
+    border: 1px solid var(--border);
+    border-radius: var(--radius-sm);
+    margin-bottom: 16px;
+    padding: 16px;
+  }
+
+  .history-table td {
+    padding: 8px 0;
+    border-bottom: 1px solid var(--cream-dark);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .history-table td:last-child {
+    border-bottom: none;
+    padding-top: 14px;
+  }
+
+  .history-table td::before {
+    content: attr(data-label);
+    font-weight: 700;
+    font-size: 0.8rem;
+    color: var(--muted);
+    text-transform: uppercase;
+  }
+
+  .auth-form-side {
+    padding: 30px 16px;
+  }
+
+  .auth-card {
+    padding: 30px 20px;
+  }
+
+  .form-row {
+    grid-template-columns: 1fr;
+  }
+
+  .footer-bottom {
+    flex-direction: column;
+    gap: 12px;
+    text-align: center;
+  }
+}
+
+@media (max-width: 480px) {
+  .container {
+    padding-left: 18px;
+    padding-right: 18px;
+  }
+
+  .scan-dialog-card {
+    padding: 28px 18px;
+  }
+
+  .sample-leaf-options {
+    grid-template-columns: 1fr 1fr;
+    gap: 8px;
+  }
+}
